@@ -3,8 +3,16 @@ import { Card, CardContent, Typography, Grid } from "@material-ui/core";
 import styles from "./Card.module.css";
 import CountUp from "react-countup";
 import cx from "classnames";
-const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
+import infected from "../../images/infected.png";
+import deathIcon from "../../images/deaths.png";
+import recoveredIcon from "../../images/recovered.png";
+
+const Cards = ({
+  data: { confirmed, recovered, deaths, lastUpdate },
+  countryName
+}) => {
   if (!confirmed) return <div></div>;
+  if (!countryName) countryName = "World";
   return (
     <div className={styles.container}>
       <Grid container spacing={3} justify="center">
@@ -17,7 +25,13 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
         >
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
-              Infected
+              <span className={styles.title}>Infected</span>
+
+              <img
+                className={styles.infectedIcon}
+                alt="INFECTED"
+                src={infected}
+              ></img>
             </Typography>
             <Typography variant="h5">
               <CountUp
@@ -28,11 +42,12 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
               ></CountUp>
             </Typography>
             <Typography color="textSecondary">
-              {" "}
-              {new Date(lastUpdate).toDateString()}
+              <span className={styles.title}>
+                {new Date(lastUpdate).toDateString()}
+              </span>
             </Typography>
             <Typography variant="body2">
-              no of active case of covid-19
+              {`No of active cases in ${countryName}`}
             </Typography>
           </CardContent>
         </Grid>
@@ -45,7 +60,12 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
         >
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
-              Recovered
+              <span className={styles.title}>Recovered</span>
+              <img
+                className={styles.recoveredIcon}
+                alt="RECOVERED"
+                src={recoveredIcon}
+              ></img>
             </Typography>
             <Typography variant="h5">
               {" "}
@@ -58,10 +78,12 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
             </Typography>
             <Typography color="textSecondary">
               {" "}
-              {new Date(lastUpdate).toDateString()}
+              <span className={styles.title}>
+                {new Date(lastUpdate).toDateString()}
+              </span>
             </Typography>
             <Typography variant="body2">
-              no of recovery from covid-19
+              {`No of recoveries in ${countryName}`}
             </Typography>
           </CardContent>
         </Grid>
@@ -74,7 +96,13 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
         >
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
-              Deaths
+              <span className={styles.title}>Deaths</span>
+
+              <img
+                className={styles.deathIcon}
+                alt="DEATHS"
+                src={deathIcon}
+              ></img>
             </Typography>
             <Typography variant="h5">
               {" "}
@@ -87,10 +115,12 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
             </Typography>
             <Typography color="textSecondary">
               {" "}
-              {new Date(lastUpdate).toDateString()}
+              <span className={styles.title}>
+                {new Date(lastUpdate).toDateString()}
+              </span>
             </Typography>
             <Typography variant="body2">
-              no of death caused by covid-19
+              {`No of deaths in ${countryName}`}
             </Typography>
           </CardContent>
         </Grid>

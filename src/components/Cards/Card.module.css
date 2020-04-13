@@ -17,3 +17,34 @@
 .deaths {
   border-bottom: 10px solid rgb(255, 0, 0, 0.5);
 }
+
+.infectedIcon {
+  width: 20%;
+}
+
+.deathIcon {
+  width: 25%;
+}
+
+.recoveredIcon {
+  width: 20%;
+}
+
+.title {
+  color: darkblue;
+}
+
+@media (max-width: 770px) {
+  .card {
+    margin: 2% 0 !important;
+  }
+  .infectedIcon {
+    width: 10%;
+  }
+  .deathIcon {
+    width: 15%;
+  }
+  .recoveredIcon {
+    width: 10%;
+  }
+}
