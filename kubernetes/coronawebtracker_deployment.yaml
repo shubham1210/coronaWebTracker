@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: coronawebtracker-deployment
+  labels:
+    app: coronawebtracker
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: coronawebtracker
+  template:
+    metadata:
+      labels:
+        app: coronawebtracker
+    spec:
+      containers:
+        - name: coronawebtracker
+          image: shsharma/corona-web-tracker:v3
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80

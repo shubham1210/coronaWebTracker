@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: coronawebtracker-service
+  labels:
+    app: coronawebtracker-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: coronawebtracker
+  ports:
+    - protocol: TCP
+      name: http
+      port: 80
+      targetPort: 80
+  selector:
+      app: coronawebtracker
+  sessionAffinity: None
