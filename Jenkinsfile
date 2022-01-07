@@ -10,7 +10,7 @@ pipeline {
         IMAGE_REPO_NAME="354042180171.dkr.ecr.us-east-2.amazonaws.com/coronawebtracker"
         IMAGE_TAG="${env.BUILD_ID}"
         REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
-	    registryCredential = "AKIAVE3UO6JF3Z6UVIIF"
+	    registryCredential = "demo-admin-user"
     }
    
     stages {
