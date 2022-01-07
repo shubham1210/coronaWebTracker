@@ -14,7 +14,7 @@ pipeline {
     }
    
     stages {
-  
+    
     // Building Docker images
     stage('Building image') {
       steps{
@@ -47,4 +47,11 @@ pipeline {
       }      
       
     }
+    stage('Removing docker images') {
+        steps{
+            script {
+                sh "docker image prune --filter 'label!=node' --filer 'label!=nginx'"
+            }
+        }
+        }
 }
