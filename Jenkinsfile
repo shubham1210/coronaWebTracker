@@ -5,7 +5,7 @@ pipeline {
         AWS_DEFAULT_REGION="us-east-2" 
         CLUSTER_NAME="java-app"
         SERVICE_NAME="corona-tracker-service"
-        TASK_DEFINITION_NAME="cornaweb-tracker-task-definition:1"
+        TASK_DEFINITION_NAME="corona-jenkins-webtracker"
         DESIRED_COUNT="2"
         IMAGE_REPO_NAME="354042180171.dkr.ecr.us-east-2.amazonaws.com/coronawebtracker"
         IMAGE_TAG="latest"

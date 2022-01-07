@@ -60,7 +60,7 @@ const Cards = ({
         >
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
-              <span className={styles.title}>Recovered(Inactive)</span>
+              <span className={styles.title}>Recovered(Inactive Api)</span>
               <img
                 className={styles.recoveredIcon}
                 alt="RECOVERED"
