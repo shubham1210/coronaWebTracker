@@ -46,7 +46,7 @@ pipeline {
         }
       }      
       
-    }
+    
     stage('Removing docker images') {
         steps{
             script {
